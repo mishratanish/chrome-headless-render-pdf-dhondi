@@ -62,6 +62,10 @@ class RenderPDF {
             footerTemplate: def('footerTemplate', undefined),
             jsTimeBudget: def('jsTimeBudget', 5000),
             animationTimeBudget: def('animationTimeBudget', 5000),
+            marginTop: def('marginTop', undefined),
+            marginBottom: def('marginBottom', undefined),
+            marginLeft: def('marginLeft', undefined),
+            marginRight: def('marginRight', undefined),
         };
 
         this.commandLineOptions = {
@@ -194,6 +198,22 @@ class RenderPDF {
 
         if (this.options.footerTemplate !== undefined) {
             options.footerTemplate = this.options.footerTemplate;
+        }
+
+        if(this.options.marginTop !== undefined) {
+            options.marginTop = parseFloat(this.options.marginTop);
+        }
+
+        if(this.options.marginBottom !== undefined) {
+            options.marginBottom = parseFloat(this.options.marginBottom);
+        }
+
+        if(this.options.marginLeft !== undefined) {
+            options.marginLeft = parseFloat(this.options.marginLeft);
+        }
+        
+        if(this.options.marginRight !== undefined) {
+            options.marginRight = parseFloat(this.options.marginRight);
         }
 
         if(this.options.scale !== undefined) {

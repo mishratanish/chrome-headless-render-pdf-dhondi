@@ -28,6 +28,10 @@ const argv = require('minimist')(process.argv.slice(2), {
         'footer-template',
         'js-time-budget',
         'animation-time-budget',
+        'margin-top',
+        'margin-right',
+        'margin-bottom',
+        'margin-left',
     ],
     boolean: [
         'no-margins',
@@ -87,6 +91,26 @@ if (typeof argv['remote-port'] === 'string') {
 let paperWidth = undefined;
 if (typeof argv['paper-width'] === 'string') {
     paperWidth = argv['paper-width'];
+}
+
+let marginTop = undefined;
+if (typeof argv['margin-top'] === 'string') {
+    marginTop = argv['margin-top'];
+}
+
+let marginBottom = undefined;
+if (typeof argv['margin-bottom'] === 'string') {
+    marginBottom = argv['margin-bottom'];
+}
+
+let marginLeft = undefined;
+if (typeof argv['margin-left'] === 'string') {
+    marginLeft = argv['margin-left'];
+}
+
+let marginRight = undefined;
+if (typeof argv['margin-right'] === 'string') {
+    marginRight = argv['margin-right'];
 }
 
 let paperHeight = undefined;
@@ -184,6 +208,10 @@ if(typeof argv['animation-time-budget'] === 'string') {
             footerTemplate,
             jsTimeBudget,
             animationTimeBudget,
+            marginTop,
+            marginBottom,
+            marginLeft,
+            marginRight,
         });
     } catch (e) {
         console.error(e);
@@ -220,6 +248,10 @@ function printHelp() {
     console.log('    --window-size            specify window size, width(,x*)height (e.g. --window-size 1600,1200 or --window-size 1600x1200)');
     console.log('    --paper-width            specify page width in inches (defaults to 8.5 inches)');
     console.log('    --paper-height           specify page height in inches (defaults to 11 inches)');
+    console.log('    --margin-top            specify page height in inches (defaults to 0)');
+    console.log('    --margin-bottom           specify page height in inches (defaults to 0)');
+    console.log('    --margin-left             specify page height in inches (defaults to 0)');
+    console.log('    --margin-right           specify page height in inches (defaults to 0)');
     console.log('    --prefer-css-page-size   respect CSS specified @page size');
     console.log('    --page-ranges            specify pages to render default all pages,  e.g. 1-5, 8, 11-13');
     console.log('    --scale                  specify scale of the webpage rendering (defaults to 1)');

@@ -1,10 +1,10 @@
 {
-  "name": "chrome-headless-render-pdf",
+  "name": "chrome-headless-render-pdf-tanish",
   "version": "1.11.0",
   "main": "index.js",
   "types": "index.d.ts",
   "license": "MIT",
-  "repository": "https://github.com/Szpadel/chrome-headless-render-pdf",
+  "repository": "https://github.com/mishratanish/chrome-headless-render-pdf-dhondi",
   "engineStrict": true,
   "bin": {
     "chrome-headless-render-pdf": "dist/cli/chrome-headless-render-pdf.js"

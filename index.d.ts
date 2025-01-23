@@ -19,6 +19,10 @@ interface IRenderPdfOptions {
     footerTemplate?: string;
     jsTimeBudget?: number;
     animationTimeBudget?: number;
+    marginTop?: string;
+    marginBottom?: string;
+    marginLeft?: string;
+    marginRight?: string;
 }
 
 interface IJobPair {
